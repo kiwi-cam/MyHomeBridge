@@ -1,3 +1,5 @@
+# Source: https://gist.github.com/johannrichard/0ad0de1feb6adb9eb61a
+#
 # Defaults / Configuration options for homebridge
 # The following settings tells homebridge where to find the config.json file and where to persist the data (i.e. pairing and others)
 HOMEBRIDGE_OPTS=-U /var/homebridge -I
