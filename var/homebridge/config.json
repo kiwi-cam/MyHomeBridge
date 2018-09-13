@@ -17,8 +17,7 @@
             "name": "Indoor Camera",
             "on": "exec /var/homebridge/enablecamera.sh",
             "off": "exec /var/homebridge/disablecamera.sh",
-        "filestate": "/var/tmp/indoorcamera.state",
-        "on_value" : "true"
+        "fileState": "/var/tmp/indoorcamera.state"
     },{
         "accessory": "TemperatureFile",
         "name": "Outside Temperature",
