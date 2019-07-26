@@ -1,10 +1,16 @@
 #!/bin/sh
-nc -z 192.168.21.51 8082
+nc -z motioneye 8082
 
 if [ $? -eq 1 ]; then
-	#Port is closed
-	rm -f /var/tmp/indoorcamera.state
+        #Port is closed
+        if [ -f /var/tmp/indoorcamera.state ]; then
+                rm -f /var/tmp/indoorcamera.state
+                echo 'Indoor Camera found offline' | systemd-cat -p warning
+        fi
 else
-	#Port is open
-	touch /var/tmp/indoorcamera.state
+        #Port is open
+        if [ ! -f /var/tmp/indoorcamera.state ]; then
+                (umask 0; touch /var/tmp/indoorcamera.state)
+                echo 'Indoor Camera found online' | systemd-cat -p warning
+        fi
 fi
