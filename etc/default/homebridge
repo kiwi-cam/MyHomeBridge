@@ -1,8 +1,15 @@
 # Source: https://gist.github.com/johannrichard/0ad0de1feb6adb9eb61a
 #
 # Defaults / Configuration options for homebridge
-# The following settings tells homebridge where to find the config.json file and where to persist the data (i.e. pairing and others)
-HOMEBRIDGE_OPTS=-U /var/homebridge -I
+# -C, --color force color in logging
+# -D, --debug, turn on debug level logging
+# -I, --insecure, allow unauthenticated requests (for easier hacking)
+# -P, --plugin-path [path], look for plugins installed at [path] as well as the default locations ([path] can also point to a single plugin)
+# -Q, --no-qrcode, do not issue QRcode in logging
+# -R, --remove-orphans, remove cached accessories for which plugin is not loaded
+# -T, --no-timestamp, do not issue timestamps in logging
+# -U, --user-storage-path [path], look for homebridge user files at [path] instead of the default location (~/.homebridge)
+HOMEBRIDGE_OPTS=-U /var/homebridge -I -T -C -Q
 
 # If you uncomment the following line, homebridge will log more 
 # You can display this via systemd's journalctl: journalctl -f -u homebridge
