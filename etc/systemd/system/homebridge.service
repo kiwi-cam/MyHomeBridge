@@ -10,7 +10,7 @@ User=homebridge
 EnvironmentFile=/etc/default/homebridge
 # Adapt this to your specific setup (could be /usr/local/bin/homebridge)
 # See comments below for more information
-ExecStart=/opt/node/bin/homebridge $HOMEBRIDGE_OPTS
+ExecStart=/usr/lib/node_modules/homebridge/bin/homebridge $HOMEBRIDGE_OPTS
 Restart=on-failure
 RestartSec=10
 KillMode=process
